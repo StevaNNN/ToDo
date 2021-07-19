@@ -1,6 +1,6 @@
 export interface FIELD {
     value: string | any;
-    isValid: boolean;
+    isValid: boolean | null;
 }
 export type SIGN_IN_TYPES = {
     email: FIELD,
@@ -10,11 +10,11 @@ export type SIGN_IN_TYPES = {
 export const SignInInitialState: SIGN_IN_TYPES = {
     email: {
         value: '',
-        isValid: false
+        isValid: null
     },
     password: {
         value: '',
-        isValid: false
+        isValid: null
     }
 }
 
@@ -29,7 +29,7 @@ export const signIn = (state: SIGN_IN_TYPES, action: any) => {
             return {
                 email: {
                     value: action.payload.value,
-                    isValid: action.payload.value.length > 6 && action.payload.value.includes('@')
+                    isValid: action.payload.value.trim().length > 6 && action.payload.value.includes('@')
                 },
                 password: {
                     value: state.password.value,
@@ -44,7 +44,7 @@ export const signIn = (state: SIGN_IN_TYPES, action: any) => {
                 },
                 password: {
                     value: action.payload.value,
-                    isValid: action.payload.value.length > 6
+                    isValid: action.payload.value.trim().length > 6
                 }
             }
         default:
