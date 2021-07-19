@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
-import Dashboard from "./Containers/Dashboard/Dashboard";
+import ToDoList from "./Containers/ToDoList/ToDoList";
 import InitialPage from "./Containers/InitialPage/InitialPage";
 
 const App = (props: any) => {
@@ -9,7 +9,7 @@ const App = (props: any) => {
     <div className="App">
       <Switch>
         <Route path="/dashboard">
-          <Dashboard />
+          <ToDoList/>
         </Route>
         <Route exact path="/">
           <InitialPage{...props} />

@@ -32,6 +32,7 @@ const Input = (props: INPUT_PROPS) => {
 			<input
 				className={classes.input}
 				type={type}
+				autoComplete={"false"}
 				id={id}
 				value={value}
 				onChange={onChange}

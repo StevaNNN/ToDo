@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import './Theme/main.scss';
 
 ReactDOM.render(
-  <Provider store={store} >
+  <Provider store={store}>
     <Router>
       <App />
     </Router>

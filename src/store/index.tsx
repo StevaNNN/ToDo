@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import dialogSlice from "./dialog";
-import formSlice from  './form';
+import dialogSlice from "./dialog"
 
 const store = configureStore({
 	reducer: {
-		dialog: dialogSlice.reducer,
-		form: formSlice.reducer
+		dialog: dialogSlice.reducer
 	}
 });
 
