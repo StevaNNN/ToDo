@@ -1,0 +1,31 @@
+.#{$prefix}primary-color {
+    color: $primary-color;
+}
+
+.#{$prefix}text-color {
+    color: #777;
+}
+
+.#{$prefix}text-color-dark {
+    color: #333;
+}
+
+.#{$prefix}text-color-light {
+    color: #ddd;
+}
+
+.#{$prefix}text-color-accent {
+    color: $text-color;
+}
+
+.#{$prefix}font-size-sm {
+    font-size: $font-size-sm;
+}
+
+.#{$prefix}font-size-lg {
+    font-size: $font-size-lg;
+}
+
+.#{$prefix}font-semibold {
+    font-family: $font-family-semibold;
+}

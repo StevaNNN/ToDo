@@ -1,0 +1,69 @@
+@import "../../../Theme/sass/abstract/variables";
+@import "../../../Theme/sass/abstract/icon-unicodes";
+@import "../../../Theme/sass/abstract/functions";
+
+.checkbox {
+    
+    input {
+        appearance: none;
+        border-radius: $db-input-border-radius;
+        background-color: $db-input-background-color;
+        border: $db-input-border-width $db-input-border-style $db-input-border-color;
+        outline: none;
+        width: $db-checkbox-size;
+        height: $db-checkbox-size;
+        position: relative;
+        cursor: pointer;
+        transition: transition();
+        
+        &:hover,
+        &:focus {
+            border-color: $db-input-focus-border-color;
+        }
+    
+        &:focus {
+            box-shadow: $db-input-box-shadow;
+        }
+        
+        &::before {
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            pointer-events: none;
+            font-size: $db-checkbox-size;
+            width: $db-checkbox-size;
+            height: $db-checkbox-size;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: $border-radius;
+            font-family: $icon-font-family;
+        }
+        
+        &:checked {
+            
+            &::before {
+                background-color: $primary-color;
+                color: $white;
+                content: content(map-get($mat-font-icon-class-and-unicode-map, check));
+            }
+        }
+    }
+}
+
+.radio {
+    
+    input {
+        border-radius: 50%;
+        
+        &::before {
+            border-radius: 50%;
+        }
+        
+        &:checked {
+            &::before {
+                content: content(map-get($mat-font-icon-class-and-unicode-map, radio_button_checked))
+            }
+        }
+    }
+}

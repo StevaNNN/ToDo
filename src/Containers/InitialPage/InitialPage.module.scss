@@ -1,0 +1,15 @@
+@import "../../Theme/sass/abstract/variables";
+
+.initial {
+    height: 100%;
+    
+    > div {
+        padding: 2rem;
+        width: 40rem;
+        height: 40rem;
+    }
+}
+
+.spacing {
+    margin: 2rem 0;
+}

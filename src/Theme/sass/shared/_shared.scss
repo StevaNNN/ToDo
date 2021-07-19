@@ -1,0 +1,84 @@
+@import "../abstract/functions";
+
+body,
+html,
+#root,
+.App {
+    height: 100%;
+}
+
+.#{$prefix}section {
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: transition(all);
+
+    &.visible {
+        opacity: 1;
+    }
+}
+
+.#{$prefix}section-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 120rem;
+    width: 100%;
+}
+
+.#{$prefix}section-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    flex: 1;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px){
+        justify-content: center;
+
+        .#{$prefix}section-title {
+            flex: 1;
+        }
+    }
+
+    &.#{$prefix}header-centered {
+        justify-content: center;
+
+        .#{$prefix}section-title {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.#{$prefix}card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.#{$prefix}cp {
+    background-color: #f8f6fe;
+    margin: 0;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.#{$prefix}section-title {
+    margin: 0;
+    font-size: 3.2rem;
+    text-align: center;
+
+    @media (max-width: 450px) {
+        font-size: 2.6rem;
+    }
+}
+
+.#{$prefix}section-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}

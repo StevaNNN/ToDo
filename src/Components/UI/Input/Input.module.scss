@@ -1,0 +1,24 @@
+@import "../../../Theme/sass/abstract/variables";
+@import "../../../Theme/sass/abstract/functions";
+
+.input {
+    line-height: $db-input-line-height;
+    padding: $db-input-padding;
+    border-radius: $db-input-border-radius;
+    color: $db-input-color;
+    font-size: $db-input-font-size;
+    font-family: $db-input-font-family;
+    background-color: $db-input-background-color;
+    border: $db-input-border-width $db-input-border-style $db-input-border-color;
+    outline: 0;
+    transition: $transition;
+    
+    &:hover,
+    &:focus {
+        border-color: $db-input-focus-border-color;
+    }
+    
+    &:focus {
+        box-shadow: $db-input-box-shadow;
+    }
+}
