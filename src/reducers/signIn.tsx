@@ -33,18 +33,18 @@ export const signIn = (state: SIGN_IN_TYPES, action: any) => {
                 },
                 password: {
                     value: state.password.value,
-                    isValid: state.password.value.length > 6
+                    isValid: state.password.value.isValid
                 }
             }
         case SIGN_IN_ACTIONS.PASSWORD:
             return {
                 email: {
                     value: state.email.value,
-                    isValid: state.email.value.length > 6
+                    isValid: state.email.isValid
                 },
                 password: {
                     value: action.payload.value,
-                    isValid: action.payload.value > 6
+                    isValid: action.payload.value.length > 6
                 }
             }
         default:

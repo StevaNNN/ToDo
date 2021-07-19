@@ -26,7 +26,7 @@ export const signUp = (state: SIGN_UP_TYPES, action: any) => {
                 firstName: action.payload,
                 lastName: state.lastName,
                 email: state.email,
-                password: action.payload
+                password: state.password
             }
         case SIGN_UP_ACTIONS.LAST_NAME:
             return {

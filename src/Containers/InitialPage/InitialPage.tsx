@@ -34,7 +34,7 @@ const InitialPage = () => {
         });
     };
     const signInPasswordHandler = (password: string) => {
-        DISPATCHU({
+        DISPATCHI({
             type: SIGN_IN_ACTIONS.PASSWORD,
             payload: {
                 value: password
