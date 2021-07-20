@@ -53,7 +53,7 @@ const Dialog = (props: PROPS) => {
               </Button>
           </div>}
 				</div>
-			</div>, document.body.querySelector('#root') as Element) : null
+			</div>, document.body.querySelector('#modal-root') as Element) : null
 	);
 }
 

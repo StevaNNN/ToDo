@@ -4,7 +4,6 @@ import ToDoList from "./Containers/ToDoList/ToDoList";
 import InitialPage from "./Containers/InitialPage/InitialPage";
 import {useDispatch, useSelector} from "react-redux";
 import {usersActions, UsersState} from "./store/users";
-import Container from "./Components/UI/Container/Container";
 
 const App = (props: any) => {
   const dispatch = useDispatch();
@@ -22,13 +21,10 @@ const App = (props: any) => {
     <div className="App">
       <Switch>
         <Route path="/dashboard">
-          <ToDoList/>
+          <ToDoList />
         </Route>
         <Route exact path="/">
-          <InitialPage{...props} users={users} addNewUser={addNewUserHandler}/>
-          <Container justifyContentCenter alignItemsCenter vBox className={'steva'}>
-            <div className={'za-nemanju'} />
-          </Container>
+          <InitialPage{...props} users={users} addNewUser={addNewUserHandler} />
         </Route>
       </Switch>
     </div>
