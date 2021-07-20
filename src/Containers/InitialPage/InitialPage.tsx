@@ -10,18 +10,14 @@ import Input from "../../Components/UI/Input/Input";
 import {SignInInitialState, signIn, SIGN_IN_ACTIONS} from "../../reducers/signIn";
 import {SIGN_UP_ACTIONS, signUp, SignUpInitialState} from "../../reducers/signOut";
 
-const InitialPage = () => {
+const InitialPage = (props: any) => {
     const dispatch = useDispatch();
     // const history = useHistory();
 
     // DIALOG HANDLERS
     const {dialogOpened, dialogActiveRef} = useSelector((state: DialogState) => state.dialog);
-    const openDialog = (dialogActiveLabel: 'signIn' | 'signUp') => {
-        dispatch(dialogActions.open(dialogActiveLabel));
-    }
-    const closeDialog = () => {
-        dispatch(dialogActions.close());
-    }
+    const openDialog = (dialogActiveLabel: 'signIn' | 'signUp') => dispatch(dialogActions.open(dialogActiveLabel));
+    const closeDialog = () => dispatch(dialogActions.close());
 
     // SIGN IN HANDLERS
     const [signInState, DISPATCHI] = useReducer(signIn, SignInInitialState);
@@ -53,6 +49,7 @@ const InitialPage = () => {
     const signUpPasswordHandler = (password: string) => DISPATCHU({type: SIGN_UP_ACTIONS.PASSWORD, payload: password});
     const onSignUpSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        props.addNewUser(signUpState)
     }
 
     return (
@@ -124,7 +121,7 @@ const InitialPage = () => {
                         </form>
                         }
                         {dialogActiveRef === 'signUp' &&
-                        <form onClick={(e) => onSignUpSubmitHandler(e)}>
+                        <form onSubmit={(e) => onSignUpSubmitHandler(e)}>
                             <Input
                                 type={'text'}
                                 id={'firstName'}
