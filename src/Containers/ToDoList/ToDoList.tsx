@@ -8,7 +8,6 @@ interface TODO_INTERFACE {
 }
 
 const ToDoList = () => {
-
     const [todos, setTodos] = useState<TODO_INTERFACE[]>([]);
 
     const deleteTodo = (index: number) => {
@@ -27,7 +26,6 @@ const ToDoList = () => {
         const newTodos = [...todos];
         newTodos.push({text: text, isCompleted: false});
         setTodos(newTodos);
-
     };
 
     return (

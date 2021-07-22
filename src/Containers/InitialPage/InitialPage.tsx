@@ -9,6 +9,7 @@ import classes from './InitialPage.module.scss';
 import Input from "../../Components/UI/Input/Input";
 import {SignInInitialState, signIn, SIGN_IN_ACTIONS} from "../../reducers/signIn";
 import {SIGN_UP_ACTIONS, signUp, SignUpInitialState} from "../../reducers/signOut";
+import {authActions, AuthState} from "../../store/auth";
 
 const InitialPage = (props: any) => {
     const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const InitialPage = (props: any) => {
 
     // SIGN IN HANDLERS
     const [signInState, DISPATCHI] = useReducer(signIn, SignInInitialState);
+    const {isAuthenticated} = useSelector((state: AuthState) => state.auth);
     const signInEmailHandler = (email: string) => {
         DISPATCHI({
             type: SIGN_IN_ACTIONS.EMAIL,
@@ -39,6 +41,8 @@ const InitialPage = (props: any) => {
     };
     const onSignInSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        dispatch(authActions.login());
+        isAuthenticated ? localStorage.setItem('isAuthenticated', '1'): localStorage.setItem('isAuthenticated', '0');
     }
 
     // SIGN UP HANDLERS

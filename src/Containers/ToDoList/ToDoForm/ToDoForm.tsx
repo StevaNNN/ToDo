@@ -10,7 +10,6 @@ const ToDoForm = (props: PROPS) => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!value) return;
-        // @ts-ignore
         addNewTodo(value);
         setValue("");
     }
